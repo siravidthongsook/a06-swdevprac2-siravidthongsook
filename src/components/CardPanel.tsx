@@ -1,7 +1,6 @@
 "use client";
 
 import { useReducer, useState } from "react";
-import { useRouter } from "next/navigation";
 import Card from "./Card";
 import styles from "./card-panel.module.css";
 
@@ -55,7 +54,6 @@ function ratingReducer(state: RatingState, action: RatingAction): RatingState {
 }
 
 export default function CardPanel() {
-  const router = useRouter();
   const [ratings, dispatch] = useReducer(ratingReducer, initialRatings);
   const [selectedRatings, setSelectedRatings] = useState<Record<string, number>>(
     Object.fromEntries(venues.map((venue) => [venue.venueName, 0])),
@@ -67,6 +65,12 @@ export default function CardPanel() {
       [venueName]: rating,
     }));
     dispatch({ type: "set", venueName, rating });
+  };
+
+  const handleVenueClick = (venueName: string) => {
+    if (typeof window !== "undefined") {
+      window.location.assign(`/booking?venue=${encodeURIComponent(venueName)}`);
+    }
   };
 
   return (
@@ -85,9 +89,7 @@ export default function CardPanel() {
             description={venue.description}
             rating={selectedRatings[venue.venueName] ?? 0}
             onRatingChange={handleRatingChange}
-            onClick={() =>
-              router.push(`/booking?venue=${encodeURIComponent(venue.venueName)}`)
-            }
+            onClick={() => handleVenueClick(venue.venueName)}
           />
         ))}
       </div>
