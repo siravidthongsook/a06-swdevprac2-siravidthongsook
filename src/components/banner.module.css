@@ -1,0 +1,74 @@
+.banner {
+  position: relative;
+  min-height: 20rem;
+  overflow: hidden;
+  border-radius: 0;
+  isolation: isolate;
+  box-shadow: none;
+}
+
+.image {
+  object-fit: cover;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(135deg, rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.15)),
+    linear-gradient(180deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.35));
+}
+
+.content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 20rem;
+  padding: 3rem 2rem;
+  color: #fff;
+}
+
+.eyebrow {
+  margin-bottom: 0.75rem;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #f8dba9;
+}
+
+.title {
+  max-width: 100%;
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  line-height: 1.2;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.description {
+  max-width: 50rem;
+  margin-top: 1.2rem;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.95);
+  font-weight: 500;
+}
+
+@media (max-width: 640px) {
+  .banner,
+  .content {
+    min-height: 18rem;
+  }
+
+  .content {
+    padding: 1.5rem;
+  }
+
+  .description {
+    font-size: 0.95rem;
+  }
+}

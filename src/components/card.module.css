@@ -1,0 +1,40 @@
+.card {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background: rgba(255, 255, 255, 0.95);
+}
+
+.imageWrap {
+  position: relative;
+  aspect-ratio: 4 / 3;
+}
+
+.image {
+  object-fit: cover;
+}
+
+.body {
+  flex: 1;
+  padding: 1.2rem;
+}
+
+.title {
+  color: #2563eb;
+  font-size: 1.15rem;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.description {
+  margin-top: 0.6rem;
+  color: #1f2937;
+  font-size: 0.9rem;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+.ratingWrap {
+  margin-top: 0.9rem;
+}

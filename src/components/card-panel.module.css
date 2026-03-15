@@ -1,0 +1,76 @@
+.panel {
+  margin-top: 0;
+  padding: 48px 40px;
+  background: #fff;
+  animation: rise 0.9s ease-out both;
+}
+
+.sectionHeading h2 {
+  max-width: 100%;
+  color: #1f2937;
+  font-size: clamp(1.5rem, 2.5vw, 2rem);
+  line-height: 1.2;
+  font-weight: 600;
+}
+
+.kicker {
+  margin-bottom: 0.5rem;
+  color: #2563eb;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.cardRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.cardRow > * {
+  flex: 1 1 calc((100% - 3rem) / 3);
+  min-width: 0;
+}
+
+.ratingList {
+  margin-top: 2rem;
+}
+
+.ratingTitle {
+  margin-bottom: 0.75rem;
+  color: #111827;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.ratingItem {
+  width: fit-content;
+  margin-top: 0.35rem;
+  color: #1f2937;
+  cursor: pointer;
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 640px) {
+  .panel {
+    padding: 20px;
+    border-radius: 22px;
+  }
+
+  .cardRow > * {
+    flex-basis: 100%;
+  }
+}
